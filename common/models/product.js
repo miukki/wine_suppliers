@@ -1,5 +1,5 @@
-'use strict';
+"use strict";
 
-module.exports = function(Product) {
-
+module.exports = function (model) {
+  model.validateFormatOf('year', {with: /[1-2][0-9][0-9][0-9]]/});
 };

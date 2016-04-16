@@ -7,16 +7,40 @@
     "validateUpsert": true
   },
   "properties": {
-    "title": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "Description": {
-      "type": "string"
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "average_price": {
+      "type": "Number"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "winery": {
+      "type": "belongsTo",
+      "model": "Winery",
+      "foreignKey": "winery_id"
+    },
+    "category": {
+      "type": "belongsTo",
+      "model": "Category",
+      "foreignKey": "category_id"
+    },
+    "region": {
+      "type": "belongsTo",
+      "model": "Region",
+      "foreignKey": "region_id"
+    }
+  },
   "acls": [],
   "methods": {}
 }

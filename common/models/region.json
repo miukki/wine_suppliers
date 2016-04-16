@@ -1,6 +1,6 @@
 {
-  "name": "Category",
-  "plural": "Categories",
+  "name": "Region",
+  "plural": "Regions",
   "base": "PersistedModel",
   "idInjection": false,
   "options": {
@@ -17,7 +17,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "country": {
+      "type": "belongsTo",
+      "model": "Country",
+      "foreignKey": "country_id"
+    }
+  },
   "acls": [],
   "methods": {}
 }

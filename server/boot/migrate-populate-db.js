@@ -2,56 +2,57 @@
 
 //async migration to DBs: mySQL, mongoDs
 var async = require('async');
-
-// turn callbacks into promises
-function create(model, objects) {
-  return new Promise(function(resolve, reject) {
-    model.create(objects, function (err, results) {
-      if (err) {
-        //add console.log Error, if Error validation is happened we will see it on details
-        console.log('Error!', err);
-        return reject(err);
-      };
-      resolve(results);
-    });
-  });
-};
-
+var chance = require('chance').Chance();
+var _ = require('lodash');
+var slug = require('slug')
 
 module.exports = function(app) {
-  var mongoDs = app.dataSources.mongo;
+  var pg = app.dataSources.pg;
+  var countries, provinces;
 
-  mongoDs.automigrate().then(function(){
-    return Promise.all([
-     // create Product
-      create(app.models.Product, [
-        {title: 'test1', description: '...bla'},
-        {title: 'test2', description: 'something'}
-      ])
-
-    ]);
-  }).then(function(products){
-    return mongoDs.automigrate().then(function(){
-      return Promise.all([
-     // create Category
-        create(app.models.Category, [
-          {name: 'Category1'},
-          {name: 'Category2'}
-        ])
-      ]).then(function(categories) {
-        return Array.prototype.concat(products, categories);
+  pg.automigrate()
+    .then(function(){
+      countries = chance.pickset(chance.countries(), 20).map((data) => {
+          return {
+            'id': data['abbreviation'],
+            'name': data['name']
+          };
       });
 
+      return app.models.Country.create(countries);
+    })
+    .then(function(countries){
+      provinces = _.times(50, () => {
+        let last = chance.last();
+        return {
+          'id': slug(last),
+          'name': last
+        };
+      });
+
+      return app.models.Region.create(provinces);
+    })
+    .then(function(provinces){
+      return app.models.Category.create([
+        {'id': 'red', 'name': 'Red'},
+        {'id': 'white', 'name': 'White'},
+        {'id': 'rose', 'name': 'Rose'}
+      ]);
+    })
+    .then(function (types) {
+      var products = _.times(1000, function() {
+        return {
+          "name": chance.last() + ' ' + chance.pickset(['Pinot', 'Chardonnay', 'Sauvignon', 'Merlot']),
+          "description": chance.paragraph({sentences: 5}),
+          "year": chance.year({min: 1900, max: 2016})
+          "average_price": chance.integer({min: 20, max: 10000})
+        };
+      }));
+
+      return app.models.Product.create(products);
+    })
+    .catch(function(err) {
+      throw err;
     });
-
-
-  }).then(function(result){
-    const products = result[0];
-    const categories = result[1];
-
-    console.log('Models created successfully: \n', products, '\n', categories);
-  }).catch(function(err) {
-    throw err;
-  });
 
 };

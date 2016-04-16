@@ -17,41 +17,71 @@ function create(model, objects) {
   });
 };
 
+function parallel() {
+  return new Promise(function(resolve, reject){
+
+  })
+}
 
 module.exports = function(app) {
   var mongoDs = app.dataSources.mongo;
-
-  mongoDs.automigrate().then(function(){
-    return Promise.all([
-     // create Product
-      create(app.models.Product, [
-        {title: 'test1', description: '...bla'},
-        {title: 'test2', description: 'something'}
-      ])
-
-    ]);
-  }).then(function(products){
-    return mongoDs.automigrate().then(function(){
-      return Promise.all([
-     // create Category
-        create(app.models.Category, [
-          {name: 'Category1'},
-          {name: 'Category2'}
-        ])
-      ]).then(function(categories) {
-        return Array.prototype.concat(products, categories);
-      });
-
-    });
+  var memoryDs = app.dataSources.db;
+  //add postgresql connector
+  async.parallel([
+      //for mongo connector
+      function(callback){
+        mongoDs.automigrate().then(function(){
+          return Promise.all([
+           // create Product
+            create(app.models.Product, [
+              {title: 'test1', description: '...bla'},
+              {title: 'test2', description: 'something'}
+            ]),
+          //  create other data..
+            create(app.models.Category, [
+              {name: 'Category1'},
+              {name: 'Category2'}
+            ]),
 
 
-  }).then(function(result){
-    const products = result[0];
-    const categories = result[1];
+          ]);
+        }).then(function(res){
+          callback(null, res);
+        })
 
-    console.log('Models created successfully: \n', products, '\n', categories);
-  }).catch(function(err) {
-    throw err;
+      },
+
+      function(callback){
+        memoryDs.automigrate().then(function(){
+          return Promise.all([
+           // create Product
+            create(app.models.Product, [
+              {title: 'test1', description: '...bla'},
+              {title: 'test2', description: 'something'}
+            ]),
+          //  create other data..
+            create(app.models.Category, [
+              {name: 'Category1'},
+              {name: 'Category2'}
+            ]),
+
+
+          ]);
+        }).then(function(res){
+          callback(null, res);
+        })
+
+      }
+         //for new connector
+
+
+
+  ],
+  // optional callback
+  function(err, results){
+      if (err) throw err;
+      console.log('results!!', results[0], results[1]);
+      // the results array will equal ['one','two'] even though
+      // the second function had a shorter timeout.
   });
-
 };

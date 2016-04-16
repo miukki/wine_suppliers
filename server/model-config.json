@@ -20,5 +20,13 @@
   "Category": {
     "dataSource": "mongo",
     "public": true
+  },
+  "Type": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Winery": {
+    "dataSource": "mongo",
+    "public": true
   }
 }

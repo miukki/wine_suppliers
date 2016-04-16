@@ -7,3 +7,7 @@
 `node .`
 OR
 `supervisor server/server.js`
+
+
+##DBs (we have connectors: mongo only now )
+`sudo mongod`

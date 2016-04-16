@@ -32,21 +32,32 @@ module.exports = function(app) {
       function(callback){
         mongoDs.automigrate().then(function(){
           return Promise.all([
-           // create Product
+           // create wine items
             create(app.models.Product, [
-              {title: 'test1', description: '...bla'},
-              {title: 'test2', description: 'something'}
+              {title: 'Chateau Montelena', description: 'In the glass, the aromatics lean toward the floral and citrus families with rose petals, lemon blossom, and just a hint of ripe melon sneaking ...'},
+              {title: 'Cliffside Cabernet', description: 'A great gift for people who enjoy both reds and whites. Item 033...'}
             ]),
-          //  create other data..
-            create(app.models.Category, [
-              {name: 'Category1'},
-              {name: 'Category2'}
+          //  create type..
+            create(app.models.Type, [
+              {title: 'white'},
+              {title: 'red'},
+              {title: 'rose'}
+
+            ]),
+          //  create  winery..
+            create(app.models.Winery, [
+              {name: 'Napa Valley'},
+              {name: 'Salcheto'},
+              {name: 'San Guido Sassicaia'}
+
             ]),
 
 
           ]);
         }).then(function(res){
           callback(null, res);
+        }).catch(function(err){
+          callback(err);
         })
 
       },
@@ -54,12 +65,7 @@ module.exports = function(app) {
       function(callback){
         memoryDs.automigrate().then(function(){
           return Promise.all([
-           // create Product
-            create(app.models.Product, [
-              {title: 'test1', description: '...bla'},
-              {title: 'test2', description: 'something'}
-            ]),
-          //  create other data..
+          //  example how to use other connector
             create(app.models.Category, [
               {name: 'Category1'},
               {name: 'Category2'}
@@ -69,6 +75,8 @@ module.exports = function(app) {
           ]);
         }).then(function(res){
           callback(null, res);
+        }).catch(function(err){
+          callback(err);
         })
 
       }

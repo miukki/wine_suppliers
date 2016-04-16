@@ -16,7 +16,19 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "type": {
+      "type": "belongsTo",
+      "model": "Type",
+      "foreignKey": "typeId",
+      "description": "the listing types of wine"
+    },
+    "winery": {
+      "type": "belongsTo",
+      "model": "Winery",
+      "foreignKey": "wineryId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Winery",
+  "plural": "Wineries",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "lang": {
+      "type": "string",
+      "required": true,
+      "default": "en"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

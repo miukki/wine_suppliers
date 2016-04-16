@@ -28,15 +28,10 @@ module.exports = function(app) {
   var memoryDs = app.dataSources.db;
   //add postgresql connector
   async.parallel([
-      //for mongo connector
+      //for mongo connector, lists of functions:  function(callback) works in parallels
       function(callback){
         mongoDs.automigrate().then(function(){
           return Promise.all([
-           // create wine items
-            create(app.models.Product, [
-              {title: 'Chateau Montelena', description: 'In the glass, the aromatics lean toward the floral and citrus families with rose petals, lemon blossom, and just a hint of ripe melon sneaking ...'},
-              {title: 'Cliffside Cabernet', description: 'A great gift for people who enjoy both reds and whites. Item 033...'}
-            ]),
           //  create type..
             create(app.models.Type, [
               {title: 'white'},
@@ -55,13 +50,22 @@ module.exports = function(app) {
 
           ]);
         }).then(function(res){
-          callback(null, res);
+           // create wine items
+            create(app.models.Product, [
+              {title: 'Chateau Montelena', wineryId: res[1][0].id, typeId: res[0][0].id, description: 'In the glass, the aromatics lean toward the floral and citrus families with rose petals, lemon blossom, and just a hint of ripe melon sneaking ...'},
+              {title: 'Cliffside Cabernet', wineryId: res[1][1].id, typeId: res[0][1].id, description: 'A great gift for people who enjoy both reds and whites. Item 033...'}
+            ]).then(function(wines){
+              callback(null, res.concat(wines));
+            }).catch(function(err){
+              callback(err);
+            })
+
         }).catch(function(err){
           callback(err);
         })
 
       },
-
+         //for new connector
       function(callback){
         memoryDs.automigrate().then(function(){
           return Promise.all([
@@ -80,7 +84,6 @@ module.exports = function(app) {
         })
 
       }
-         //for new connector
 
 
 
@@ -88,7 +91,7 @@ module.exports = function(app) {
   // optional callback
   function(err, results){
       if (err) throw err;
-      console.log('results!!', results[0], results[1]);
+      console.log('data created successfully!', results);
       // the results array will equal ['one','two'] even though
       // the second function had a shorter timeout.
   });

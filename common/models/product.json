@@ -26,7 +26,8 @@
     "winery": {
       "type": "belongsTo",
       "model": "Winery",
-      "foreignKey": "wineryId"
+      "foreignKey": "wineryId",
+      "description": "the listing wineries"
     }
   },
   "acls": [],

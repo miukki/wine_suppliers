@@ -1,0 +1,26 @@
+{
+  "db": {
+    "name": "db",
+    "localStorage": "",
+    "file": "",
+    "connector": "memory"
+  },
+  "mongo": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "arctic",
+    "password": "",
+    "name": "mongo",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "mysql": {
+    "host": "localhost",
+    "port": 1234,
+    "database": "arctic",
+    "password": "admin",
+    "name": "mysql",
+    "user": "admin",
+    "connector": "mysql"
+  }
+}

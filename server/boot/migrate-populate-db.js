@@ -17,41 +17,82 @@ function create(model, objects) {
   });
 };
 
+function parallel() {
+  return new Promise(function(resolve, reject){
+
+  })
+}
 
 module.exports = function(app) {
   var mongoDs = app.dataSources.mongo;
+  var memoryDs = app.dataSources.db;
+  //add postgresql connector
+  async.parallel([
+      //for mongo connector, lists of functions:  function(callback) works in parallels
+      function(callback){
+        mongoDs.automigrate().then(function(){
+          return Promise.all([
+          //  create type..
+            create(app.models.Type, [
+              {title: 'white'},
+              {title: 'red'},
+              {title: 'rose'}
 
-  mongoDs.automigrate().then(function(){
-    return Promise.all([
-     // create Product
-      create(app.models.Product, [
-        {title: 'test1', description: '...bla'},
-        {title: 'test2', description: 'something'}
-      ])
+            ]),
+          //  create  winery..
+            create(app.models.Winery, [
+              {name: 'Napa Valley'},
+              {name: 'Salcheto'},
+              {name: 'San Guido Sassicaia'}
 
-    ]);
-  }).then(function(products){
-    return mongoDs.automigrate().then(function(){
-      return Promise.all([
-     // create Category
-        create(app.models.Category, [
-          {name: 'Category1'},
-          {name: 'Category2'}
-        ])
-      ]).then(function(categories) {
-        return Array.prototype.concat(products, categories);
-      });
-
-    });
+            ]),
 
 
-  }).then(function(result){
-    const products = result[0];
-    const categories = result[1];
+          ]);
+        }).then(function(res){
+           // create wine items
+            create(app.models.Product, [
+              {title: 'Chateau Montelena', wineryId: res[1][0].id, typeId: res[0][0].id, description: 'In the glass, the aromatics lean toward the floral and citrus families with rose petals, lemon blossom, and just a hint of ripe melon sneaking ...'},
+              {title: 'Cliffside Cabernet', wineryId: res[1][1].id, typeId: res[0][1].id, description: 'A great gift for people who enjoy both reds and whites. Item 033...'}
+            ]).then(function(wines){
+              callback(null, res.concat(wines));
+            }).catch(function(err){
+              callback(err);
+            })
 
-    console.log('Models created successfully: \n', products, '\n', categories);
-  }).catch(function(err) {
-    throw err;
+        }).catch(function(err){
+          callback(err);
+        })
+
+      },
+         //for new connector
+      function(callback){
+        memoryDs.automigrate().then(function(){
+          return Promise.all([
+          //  example how to use other connector
+            create(app.models.Category, [
+              {name: 'Category1'},
+              {name: 'Category2'}
+            ]),
+
+
+          ]);
+        }).then(function(res){
+          callback(null, res);
+        }).catch(function(err){
+          callback(err);
+        })
+
+      }
+
+
+
+  ],
+  // optional callback
+  function(err, results){
+      if (err) throw err;
+      console.log('data created successfully!', results);
+      // the results array will equal ['one','two'] even though
+      // the second function had a shorter timeout.
   });
-
 };

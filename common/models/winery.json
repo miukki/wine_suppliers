@@ -14,11 +14,17 @@
     "lang": {
       "type": "string",
       "required": true,
-      "default": "en"
+      "default": "zh"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "products": {
+      "type": "hasMany",
+      "model": "Product",
+      "foreignKey": "wineryId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

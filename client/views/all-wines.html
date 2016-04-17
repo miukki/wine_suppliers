@@ -1,0 +1,11 @@
+<section>
+  <ul>
+    <li ng-repeat="w in wines.slice().reverse()">
+        <b>{{w.createAt | date}} | {{w.title}} | {{w.type.title}} | {{w.winery.name}} </b></br>
+        <p>{{w.description}}</p>
+      <!--
+        <p>{{r.rating}}&#9733; - {{r.comments}}</p>
+      -->
+    </li>
+  <ul>
+</section>

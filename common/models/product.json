@@ -11,27 +11,38 @@
   },
 
   "properties": {
-    "title": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "Description": {
-      "type": "string"
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "average_price": {
+      "type": "Number"
     }
   },
   "validations": [],
   "relations": {
-    "type": {
-      "type": "belongsTo",
-      "model": "Type",
-      "foreignKey": "typeId",
-      "description": "the listing types of wine"
-    },
     "winery": {
       "type": "belongsTo",
       "model": "Winery",
-      "foreignKey": "wineryId",
-      "description": "the listing wineries"
+      "foreignKey": "winery_id"
+    },
+    "category": {
+      "type": "belongsTo",
+      "model": "Category",
+      "foreignKey": "category_id"
+    },
+    "region": {
+      "type": "belongsTo",
+      "model": "Region",
+      "foreignKey": "region_id"
     }
   },
   "acls": [

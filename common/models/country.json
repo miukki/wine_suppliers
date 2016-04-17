@@ -1,6 +1,6 @@
 {
-  "name": "Category",
-  "plural": "Categories",
+  "name": "Country",
+  "plural": "Countries",
   "base": "PersistedModel",
   "idInjection": false,
   "options": {
@@ -17,7 +17,8 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+  },
   "acls": [],
   "methods": {}
 }

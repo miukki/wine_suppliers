@@ -22,5 +22,14 @@
     "name": "mysql",
     "user": "admin",
     "connector": "mysql"
+  },
+  "pg": {
+    "name": "postgresql",
+    "connector": "postgresql",
+    "host": "localhost",
+    "port": 5432,
+    "database": "wine",
+    "password": "admin",
+    "user": "wine_admin"
   }
 }

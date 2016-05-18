@@ -1,0 +1,27 @@
+{
+  "name": "wine_suppliers",
+  "description": "wine_suppliers",
+  "main": "server/server.js",
+  "authors": [
+    "Anja Ishmukhametova <miukki@gmail.com>",
+    "Sylvain"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/miukki/wine_suppliers",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./client/bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.4",
+    "angular-resource": "^1.5.3",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "bootstrap-sass": "^3.3.6"
+  }
+}

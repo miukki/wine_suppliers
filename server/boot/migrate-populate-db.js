@@ -46,14 +46,24 @@ module.exports = function(app) {
               {name: 'San Guido Sassicaia'}
 
             ]),
+        // create grapes
+            create(app.models.Grape, [
+              {name: 'Cabernet franc'},
+              {name: 'Merlot'},
+              {name: 'Trempanillo'},
+              {name: 'Chardonnay'},
+              {name: 'Cabernec sauvignon'}
+            ])
+
 
 
           ]);
         }).then(function(res){
            // create wine items
+           console.log('res', res[2][0].id);
             create(app.models.Product, [
-              {title: 'Chateau Montelena', wineryId: res[1][0].id, typeId: res[0][0].id, description: 'In the glass, the aromatics lean toward the floral and citrus families with rose petals, lemon blossom, and just a hint of ripe melon sneaking ...'},
-              {title: 'Cliffside Cabernet', wineryId: res[1][1].id, typeId: res[0][1].id, description: 'A great gift for people who enjoy both reds and whites. Item 033...'}
+              {title: 'Chateau Montelena', wineryId: res[1][0].id, typeId: res[0][0].id, description: 'In the glass, the aromatics lean toward the floral and citrus families with rose petals, lemon blossom, and just a hint of ripe melon sneaking ...', grapeIds: [res[2][0].id, res[2][1].id]},
+              {title: 'Cliffside Cabernet', wineryId: res[1][1].id, typeId: res[0][1].id, description: 'A great gift for people who enjoy both reds and whites. Item 033...', grapeIds: [res[2][2].id, res[2][3].id, res[2][4].id]}
             ]).then(function(wines){
               callback(null, res.concat(wines));
             }).catch(function(err){
@@ -65,15 +75,11 @@ module.exports = function(app) {
         })
 
       },
-         //for new connector
+         //for new (perhpas other) connector, if in future we want to use new  DBs
       function(callback){
-        memoryDs.automigrate().then(function(){
+        mongoDs.automigrate().then(function(){
           return Promise.all([
           //  example how to use other connector
-            create(app.models.Category, [
-              {name: 'Category1'},
-              {name: 'Category2'}
-            ]),
 
 
           ]);

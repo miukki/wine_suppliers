@@ -1,6 +1,6 @@
 {
-  "name": "Category",
-  "plural": "Categories",
+  "name": "Grape",
+  "plural": "Grapes",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -13,7 +13,14 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "products": {
+      "type": "hasAndBelongsToMany",
+      "model": "Product",
+      "foreignKey": "productIds",
+      "description": "the listing types of products"
+    }
+  },
   "acls": [],
   "methods": {}
 }

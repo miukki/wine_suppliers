@@ -9,7 +9,6 @@
   "mixins": {
     "Timestamp": {}
   },
-
   "properties": {
     "title": {
       "type": "string",
@@ -32,6 +31,12 @@
       "model": "Winery",
       "foreignKey": "wineryId",
       "description": "the listing wineries"
+    },
+    "grapes": {
+      "type": "hasAndBelongsToMany",
+      "model": "Grape",
+      "foreignKey": "grapeIds",
+      "description": "the listing types of grapes"
     }
   },
   "acls": [

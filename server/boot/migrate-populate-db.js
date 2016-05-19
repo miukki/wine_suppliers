@@ -2,6 +2,7 @@
 
 //async migration to DBs: mySQL, mongoDs
 var async = require('async');
+var chance = require('chance').Chance();
 
 // turn callbacks into promises
 function create(model, objects) {

@@ -22,8 +22,16 @@
     "products": {
       "type": "hasMany",
       "model": "Product",
-      "foreignKey": "wineryId"
+      "foreignKey": "wineryId",
+      "description": "the winery has many products"
+    },
+    "region": {
+      "type": "belongsTo",
+      "model": "Region",
+      "foreignKey": "regionId",
+      "description": "the winery belongs to region"
     }
+
   },
   "acls": [],
   "methods": {}

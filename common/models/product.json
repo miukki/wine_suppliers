@@ -19,6 +19,10 @@
     },
     "price": {
       "type": "number"
+    },
+    "year": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
@@ -40,12 +44,6 @@
       "model": "Grape",
       "foreignKey": "grapeIds",
       "description": "the types of grapes contained in this wine"
-    },
-    "region": {
-      "type": "belongsTo",
-      "model": "Region",
-      "foreignKey": "regionId",
-      "description": "the origin region of the wine"
     }
   },
   "acls": [

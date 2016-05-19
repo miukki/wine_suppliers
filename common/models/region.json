@@ -17,7 +17,14 @@
       "type": "belongsTo",
       "model": "Country",
       "foreignKey": "countryId"
+    },
+    "winery": {
+      "type": "hasMany",
+      "model": "Winery",
+      "foreignKey": "regionId",
+      "description": "the region has many winery"
     }
+
   },
   "acls": [],
   "methods": {}

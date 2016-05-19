@@ -63,9 +63,9 @@ module.exports = function(app) {
             ]),
             // regions
             create(app.models.Region, [
-              {name: 'Bordaux', countryId: 1},
-              {name: 'Catalan', countryId: 2},
-              {name: 'White', countryId: 3},
+              {id: 1, name: 'Bordaux', countryId: 1},
+              {id: 2, name: 'Catalan', countryId: 2},
+              {id: 3, name: 'White', countryId: 3},
             ]),
 
 

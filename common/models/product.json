@@ -9,14 +9,16 @@
   "mixins": {
     "Timestamp": {}
   },
-
   "properties": {
     "title": {
       "type": "string",
       "required": true
     },
-    "Description": {
+    "description": {
       "type": "string"
+    },
+    "price": {
+      "type": "number"
     }
   },
   "validations": [],
@@ -32,6 +34,18 @@
       "model": "Winery",
       "foreignKey": "wineryId",
       "description": "the listing wineries"
+    },
+    "grapes": {
+      "type": "referencesMany",
+      "model": "Grape",
+      "foreignKey": "grapeIds",
+      "description": "the types of grapes contained in this wine"
+    },
+    "region": {
+      "type": "belongsTo",
+      "model": "Region",
+      "foreignKey": "regionId",
+      "description": "the origin region of the wine"
     }
   },
   "acls": [

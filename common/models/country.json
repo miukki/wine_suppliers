@@ -1,0 +1,25 @@
+{
+  "name": "Country",
+  "plural": "countries",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "regions": {
+      "type": "hasMany",
+      "model": "Region",
+      "foreignKey": "countryId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

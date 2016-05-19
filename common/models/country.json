@@ -1,6 +1,6 @@
 {
-  "name": "Grape",
-  "plural": "Grapes",
+  "name": "Country",
+  "plural": "countries",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -14,11 +14,10 @@
   },
   "validations": [],
   "relations": {
-    "products": {
+    "regions": {
       "type": "hasMany",
-      "model": "Product",
-      "foreignKey": "grapeIds",
-      "description": "products that contains this grape"
+      "model": "Region",
+      "foreignKey": "countryId"
     }
   },
   "acls": [],

@@ -14,8 +14,11 @@
       "type": "string",
       "required": true
     },
-    "Description": {
+    "description": {
       "type": "string"
+    },
+    "price": {
+      "type": "number"
     }
   },
   "validations": [],
@@ -33,10 +36,16 @@
       "description": "the listing wineries"
     },
     "grapes": {
-      "type": "hasAndBelongsToMany",
+      "type": "referencesMany",
       "model": "Grape",
       "foreignKey": "grapeIds",
-      "description": "the listing types of grapes"
+      "description": "the types of grapes contained in this wine"
+    },
+    "region": {
+      "type": "belongsTo",
+      "model": "Region",
+      "foreignKey": "regionId",
+      "description": "the origin region of the wine"
     }
   },
   "acls": [

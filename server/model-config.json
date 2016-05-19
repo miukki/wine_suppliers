@@ -28,5 +28,13 @@
   "Winery": {
     "dataSource": "mongo",
     "public": true
+  },
+  "Country": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Region": {
+    "dataSource": "mongo",
+    "public": true
   }
 }

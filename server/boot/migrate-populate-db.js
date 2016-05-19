@@ -53,17 +53,32 @@ module.exports = function(app) {
               {name: 'Trempanillo'},
               {name: 'Chardonnay'},
               {name: 'Cabernec sauvignon'}
-            ])
+            ]),
 
+            // countries
+            create(app.models.Country, [
+              {id: 1, name: 'France'},
+              {id: 2, name: 'Spain'},
+              {id: 3, name: 'New Zealand'},
+            ]),
+            // regions
+            create(app.models.Region, [
+              {name: 'Bordaux', countryId: 1},
+              {name: 'Catalan', countryId: 2},
+              {name: 'White', countryId: 3},
+            ]),
 
 
           ]);
         }).then(function(res){
            // create wine items
            console.log('res', res[2][0].id);
-            create(app.models.Product, [
+           create(app.models.Product, [
               {title: 'Chateau Montelena', wineryId: res[1][0].id, typeId: res[0][0].id, description: 'In the glass, the aromatics lean toward the floral and citrus families with rose petals, lemon blossom, and just a hint of ripe melon sneaking ...', grapeIds: [res[2][0].id, res[2][1].id]},
-              {title: 'Cliffside Cabernet', wineryId: res[1][1].id, typeId: res[0][1].id, description: 'A great gift for people who enjoy both reds and whites. Item 033...', grapeIds: [res[2][2].id, res[2][3].id, res[2][4].id]}
+              {title: 'Cliffside Cabernet', wineryId: res[1][1].id, typeId: res[0][1].id, description: 'A great gift for people who enjoy both reds and whites. Item 033...', grapeIds: [res[2][2].id, res[2][3].id, res[2][4].id]},
+              {title: 'wine 1', regionId: 1, typeId: res[0][1].id, grapeIds: [res[2][0].id, res[2][1].id, res[2][4].id], description: 'wine 1 description', price: 250},
+              {title: 'wine 2', regionId: 2, typeId: res[0][1].id, grapeIds: [res[2][2].id], description: 'wine 2 description', price: 95},
+              {title: 'wine 3', regionId: 3, typeId: res[0][0].id, grapeIds: [res[2][3].id], description: 'wine 3 description', price: 145},
             ]).then(function(wines){
               callback(null, res.concat(wines));
             }).catch(function(err){

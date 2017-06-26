@@ -3,6 +3,7 @@
   "plural": "Types",
   "base": "PersistedModel",
   "idInjection": true,
+  "forceId": true,
   "options": {
     "validateUpsert": true
   },
@@ -21,5 +22,13 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "staticMethod": {
+      "http": { "path": "/static" }
+    },
+    "prototype.instanceMethod": {
+     "http": { "path": "/instance" }
+    } 
+  },
+  "replaceOnPUT": true
 }

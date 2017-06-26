@@ -3,6 +3,7 @@
   "plural": "Products",
   "base": "PersistedModel",
   "idInjection": true,
+  "forceId": true,
   "options": {
     "validateUpsert": true
   },
@@ -19,6 +20,10 @@
     },
     "price": {
       "type": "number"
+    },
+    "year": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
@@ -40,12 +45,6 @@
       "model": "Grape",
       "foreignKey": "grapeIds",
       "description": "the types of grapes contained in this wine"
-    },
-    "region": {
-      "type": "belongsTo",
-      "model": "Region",
-      "foreignKey": "regionId",
-      "description": "the origin region of the wine"
     }
   },
   "acls": [
@@ -75,5 +74,14 @@
       "permission": "ALLOW"
     }
   ],
-  "methods": {}
+  "methods": {
+    "staticMethod": {
+      "http": { "path": "/static" }
+    },
+    "prototype.instanceMethod": {
+     "http": { "path": "/instance" }
+    } 
+  },
+
+  "replaceOnPUT": true
 }

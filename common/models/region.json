@@ -2,6 +2,7 @@
   "name": "Region",
   "base": "PersistedModel",
   "idInjection": true,
+  "forceId": true,
   "options": {
     "validateUpsert": true
   },
@@ -17,8 +18,25 @@
       "type": "belongsTo",
       "model": "Country",
       "foreignKey": "countryId"
+    },
+    "winery": {
+      "type": "hasMany",
+      "model": "Winery",
+      "foreignKey": "regionId",
+      "description": "the region has many winery"
     }
+
   },
   "acls": [],
-  "methods": {}
+
+  "methods": {
+    "staticMethod": {
+      "http": { "path": "/static" }
+    },
+    "prototype.instanceMethod": {
+     "http": { "path": "/instance" }
+    } 
+  },
+
+  "replaceOnPUT": true
 }

@@ -2,10 +2,12 @@
 
 //async migration to DBs: mySQL, mongoDs
 var async = require('async');
+var chance = require('chance').Chance();
 
 // turn callbacks into promises
 function create(model, objects) {
   return new Promise(function(resolve, reject) {
+    //http://apidocs.strongloop.com/loopback/#persistedmodel-create
     model.create(objects, function (err, results) {
       if (err) {
         //add console.log Error, if Error validation is happened we will see it on details
@@ -30,7 +32,35 @@ module.exports = function(app) {
   async.parallel([
       //for mongo connector, lists of functions:  function(callback) works in parallels
       function(callback){
-        mongoDs.automigrate().then(function(){
+        mongoDs.automigrate()
+        .then(function(){
+          //create countries
+          return create(app.models.Country, [
+              {name: 'France'},
+              {name: 'Spain'},
+              {name: 'New Zealand'},
+              {name: 'Canada'},
+              {name: 'Chile'},
+              {name: 'Mexico'},
+              {name: 'Peru'}
+            ]);
+        })
+
+        .then(function(res){
+       // regions belongs to country
+        return create(app.models.Region, [
+              {name: 'Pernambuco', countryId: res[0].id},
+              {name: 'Catalan', countryId: res[1].id},
+              {name: 'Santa Catarina', countryId: res[2].id},
+              {name: 'British Columbia', countryId: res[3].id},
+              {name: 'Aconcagua', countryId: res[4].id},
+              {name: 'Aguascalientes', countryId: res[5].id},
+              {name: 'Lima', countryId: res[6].id}
+            ]);
+
+        })
+        .then(function(res){
+
           return Promise.all([
           //  create type..
             create(app.models.Type, [
@@ -39,46 +69,47 @@ module.exports = function(app) {
               {title: 'rose'}
 
             ]),
-          //  create  winery..
+            //  create  winery belongs to region..
             create(app.models.Winery, [
-              {name: 'Napa Valley'},
-              {name: 'Salcheto'},
-              {name: 'San Guido Sassicaia'}
 
+              {name: 'Sebastiani 酒庄', regionId: res[0].id },
+              {name: 'Ravenswood Winery', regionId: res[1].id},
+              {name: 'Weingut Rademacher', regionId: res[2].id },
+              {name: 'Schloss Vollrads', regionId: res[3].id },
+              {name: 'Fewo Weingut Clauer', regionId: res[4].id },
+              {name: 'Weingut Villa Wolf', regionId: res[5].id },
+              {name: 'Gunderloch', regionId: res[6].id }
+              
+              
             ]),
-        // create grapes
+
+            // create grapes
             create(app.models.Grape, [
-              {name: 'Cabernet franc'},
+              {name: 'Sangiovese'},
               {name: 'Merlot'},
-              {name: 'Trempanillo'},
+              {name: 'Zinfandel'},
               {name: 'Chardonnay'},
-              {name: 'Cabernec sauvignon'}
+              {name: 'Pinot noir'},
+              {name: 'Cabernet sauvignon'},
+              {name: 'Abouriou'},
+              {name: 'Syrah'},
+              {name: 'Malbec'},
+              {name: 'Barbera'}
             ]),
 
-            // countries
-            create(app.models.Country, [
-              {id: 1, name: 'France'},
-              {id: 2, name: 'Spain'},
-              {id: 3, name: 'New Zealand'},
-            ]),
-            // regions
-            create(app.models.Region, [
-              {id: 1, name: 'Bordaux', countryId: 1},
-              {id: 2, name: 'Catalan', countryId: 2},
-              {id: 3, name: 'White', countryId: 3},
-            ]),
 
 
           ]);
-        }).then(function(res){
+        })
+        .then(function(res){
            // create wine items
            console.log('res', res[2][0].id);
            create(app.models.Product, [
-              {title: 'Chateau Montelena', wineryId: res[1][0].id, typeId: res[0][0].id, description: 'In the glass, the aromatics lean toward the floral and citrus families with rose petals, lemon blossom, and just a hint of ripe melon sneaking ...', grapeIds: [res[2][0].id, res[2][1].id]},
-              {title: 'Cliffside Cabernet', wineryId: res[1][1].id, typeId: res[0][1].id, description: 'A great gift for people who enjoy both reds and whites. Item 033...', grapeIds: [res[2][2].id, res[2][3].id, res[2][4].id]},
-              {title: 'wine 1', regionId: 1, typeId: res[0][1].id, grapeIds: [res[2][0].id, res[2][1].id, res[2][4].id], description: 'wine 1 description', price: 250},
-              {title: 'wine 2', regionId: 2, typeId: res[0][1].id, grapeIds: [res[2][2].id], description: 'wine 2 description', price: 95},
-              {title: 'wine 3', regionId: 3, typeId: res[0][0].id, grapeIds: [res[2][3].id], description: 'wine 3 description', price: 145},
+              {year: chance.year({min: 1900, max: 2016}), title: 'Chateau Montelena', wineryId: res[1][0].id, typeId: res[0][0].id, description: 'In the glass, the aromatics lean toward the floral and citrus families with rose petals, lemon blossom, and just a hint of ripe melon sneaking ...', grapeIds: [res[2][0].id, res[2][1].id], price: 95},
+              {year: chance.year({min: 1900, max: 2016}), title: 'Cliffside Cabernet', wineryId: res[1][1].id, typeId: res[0][1].id, description: 'A great gift for people who enjoy both reds and whites. Item 033...', grapeIds: [res[2][2].id, res[2][3].id, res[2][4].id], price: 95},
+              {year: chance.year({min: 1900, max: 2016}), title: 'Vinstanto', wineryId: res[1][2].id, typeId: res[0][1].id, description: 'Aromatic white wines are defined by dominant floral aromas caused by a special ', grapeIds: [res[2][0].id, res[2][1].id, res[2][4].id], price: 250},
+              {year: chance.year({min: 1900, max: 2016}), title: 'Amazoto', wineryId: res[1][3].id, typeId: res[0][1].id, description: 'Some wines have more of a bouquet than others, our friends at Drync and us are here ', grapeIds: [res[2][5].id], price: 95},
+              {year: chance.year({min: 1900, max: 2016}), title: 'Ametistio', wineryId: res[1][4].id, typeId: res[0][0].id, description: 'Assyrtiko can also be used together with the aromatic Aidani and Athiri grapes for the production of the unique, naturally sweet wines called', grapeIds: [res[2][5].id], price: 145},
             ]).then(function(wines){
               callback(null, res.concat(wines));
             }).catch(function(err){

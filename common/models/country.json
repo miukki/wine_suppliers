@@ -21,5 +21,13 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "staticMethod": {
+      "http": { "path": "/static" }
+    },
+    "prototype.instanceMethod": {
+     "http": { "path": "/instance" }
+    } 
+  },
+  "replaceOnPUT": true
 }

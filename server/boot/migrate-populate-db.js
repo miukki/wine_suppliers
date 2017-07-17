@@ -25,6 +25,14 @@ function parallel() {
   })
 }
 
+function createRoles(roles, Role) {
+    var promises = roles.map(function(role) {
+      return Role.create({name: 'role'});
+    });
+
+    return Promise.all(promises);
+}
+
 module.exports = function(app) {
   var mongoDs = app.dataSources.mongo;
   var memoryDs = app.dataSources.db;
@@ -33,7 +41,29 @@ module.exports = function(app) {
       //for mongo connector, lists of functions:  function(callback) works in parallels
       function(callback){
         mongoDs.automigrate()
-        .then(function(){
+          .then(createRoles(['root', 'supplier'], app.models.Role))
+          // .then(function () {
+          //   var User = app.models.user;
+          //   var Role = app.models.Role;
+          //   var RoleMapping = app.models.RoleMapping;
+          //   return User.create([{username: 'root', email: 'admin@admin.com', password: 'admin'}])
+          //     .then(function (users) {
+          //       console.log('Created admin user - ok');
+          //       return Role.create({name: 'root'})
+          //         .then(
+          //           function (role) {
+          //             console.log('Created role:', role);
+          //             return role.principals.create({
+          //               principalType: RoleMapping.USER,
+          //               principalId: users[0].id
+          //             });
+          //           }).then(
+          //           function (principal) {
+          //             console.log('Created principal:', principal);
+          //           });
+          //     });
+          // })
+          .then(function(){
           //create countries
           return create(app.models.Country, [
               {name: 'France'},
@@ -79,8 +109,8 @@ module.exports = function(app) {
               {name: 'Fewo Weingut Clauer', regionId: res[4].id },
               {name: 'Weingut Villa Wolf', regionId: res[5].id },
               {name: 'Gunderloch', regionId: res[6].id }
-              
-              
+
+
             ]),
 
             // create grapes

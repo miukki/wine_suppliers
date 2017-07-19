@@ -25,6 +25,14 @@ function parallel() {
   })
 }
 
+function createRoles(roles, Role) {
+    var promises = roles.map(function(role) {
+      return Role.create({name: 'role'});
+    });
+
+    return Promise.all(promises);
+}
+
 module.exports = function(app) {
   var mongoDs = app.dataSources.mongo;
   var memoryDs = app.dataSources.db;
@@ -33,6 +41,7 @@ module.exports = function(app) {
       //for mongo connector, lists of functions:  function(callback) works in parallels
       function(callback){
         mongoDs.automigrate()
+          .then(createRoles(['root', 'supplier'], app.models.Role))
           // .then(function () {
           //   var User = app.models.user;
           //   var Role = app.models.Role;
@@ -100,8 +109,6 @@ module.exports = function(app) {
               {name: 'Fewo Weingut Clauer', regionId: res[4].id },
               {name: 'Weingut Villa Wolf', regionId: res[5].id },
               {name: 'Gunderloch', regionId: res[6].id }
-
-
             ]),
 
             // create grapes

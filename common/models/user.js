@@ -10,10 +10,16 @@ module.exports = function(User) {
     if (ctx.instance) {
       if(ctx.isNewInstance) {
 
-        Role.create({name: 'supplier'}, function(err, role) {
+        Role.find({where: {name: 'supplier'}}, function(err, roles) {
           if (err) {
             return console.log(err);
           }
+
+          if (roles.length === 0) {
+            return console.log('Role supplier not found');
+          }
+
+          var role = roles[0];
 
           RoleMapping.create({
             principalType: "USER",
@@ -23,7 +29,7 @@ module.exports = function(User) {
 
             if (err) {return console.log(err);}
 
-            console.log('User assigned RoleID ', roleMapping);
+            console.log('User assigned RoleID ', role.id, role.name);
 
           });
 

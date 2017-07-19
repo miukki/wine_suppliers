@@ -109,8 +109,6 @@ module.exports = function(app) {
               {name: 'Fewo Weingut Clauer', regionId: res[4].id },
               {name: 'Weingut Villa Wolf', regionId: res[5].id },
               {name: 'Gunderloch', regionId: res[6].id }
-
-
             ]),
 
             // create grapes

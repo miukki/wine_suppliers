@@ -1,0 +1,1490 @@
+[
+  {
+    "region": "Algiers",
+    "country_code": "DZA"
+  },
+  {
+    "region": "Béjaïa",
+    "country_code": "DZA"
+  },
+  {
+    "region": "Chelf Province",
+    "country_code": "DZA"
+  },
+  {
+    "region": "Mascara",
+    "country_code": "DZA"
+  },
+  {
+    "region": "Médéa",
+    "country_code": "DZA"
+  },
+  {
+    "region": "Tlemcen",
+    "country_code": "DZA"
+  },
+  {
+    "region": "Zaccar",
+    "country_code": "DZA"
+  },
+  {
+    "region": "Chã das Caldeiras",
+    "country_code": "CPV"
+  },
+  {
+    "region": "Altas Mountains",
+    "country_code": "MARR"
+  },
+  {
+    "region": "Breede River Valley",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Constantia",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Durbanville",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Elgin",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Elim",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Franschhoek",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Little Karoo",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Orange River Valley",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Paarl",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Robertson",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Stellenbosch",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Swartland",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Tulbagh",
+    "country_code": "ZAF"
+  },
+  {
+    "region": "Arianah",
+    "country_code": "TUN"
+  },
+  {
+    "region": "Nabul",
+    "country_code": "TUN"
+  },
+  {
+    "region": "Sousse",
+    "country_code": "TUN"
+  },
+  {
+    "region": "Buenos Aires Province",
+    "country_code": "ARG"
+  },
+  {
+    "region": "Catamarca Province",
+    "country_code": "ARG"
+  },
+  {
+    "region": "La Rioja Province",
+    "country_code": "ARG"
+  },
+  {
+    "region": "Mendoza Province",
+    "country_code": "ARG"
+  },
+  {
+    "region": "Neuquén Province",
+    "country_code": "ARG"
+  },
+  {
+    "region": "Río Negro Province",
+    "country_code": "ARG"
+  },
+  {
+    "region": "Salta Province",
+    "country_code": "ARG"
+  },
+  {
+    "region": "San Juan Province",
+    "country_code": "ARG"
+  },
+  {
+    "region": "Tarija Department",
+    "country_code": "BOL"
+  },
+  {
+    "region": "Bahia",
+    "country_code": "BRA"
+  },
+  {
+    "region": "Mato Grosso",
+    "country_code": "BRA"
+  },
+  {
+    "region": "Minas Gerais",
+    "country_code": "BRA"
+  },
+  {
+    "region": "Paraná",
+    "country_code": "BRA"
+  },
+  {
+    "region": "Pernambuco",
+    "country_code": "BRA"
+  },
+  {
+    "region": "Rio Grande do Sul",
+    "country_code": "BRA"
+  },
+  {
+    "region": "Santa Catarina",
+    "country_code": "BRA"
+  },
+  {
+    "region": "São Paulo",
+    "country_code": "BRA"
+  },
+  {
+    "region": "Quebec",
+    "country_code": "CAN"
+  },
+  {
+    "region": "British Columbia",
+    "country_code": "CAN"
+  },
+  {
+    "region": "Nova Scotia",
+    "country_code": "CAN"
+  },
+  {
+    "region": "Ontario",
+    "country_code": "CAN"
+  },
+  {
+    "region": "Aconcagua",
+    "country_code": "CHL"
+  },
+  {
+    "region": "Atacama",
+    "country_code": "CHL"
+  },
+  {
+    "region": "Central Valley",
+    "country_code": "CHL"
+  },
+  {
+    "region": "Coquimbo",
+    "country_code": "CHL"
+  },
+  {
+    "region": "Pica",
+    "country_code": "CHL"
+  },
+  {
+    "region": "Southern Chile",
+    "country_code": "CHL"
+  },
+  {
+    "region": "Aguascalientes",
+    "country_code": "MEX"
+  },
+  {
+    "region": "Baja California",
+    "country_code": "MEX"
+  },
+  {
+    "region": "Coahuila/Durango (known as La Laguna)",
+    "country_code": "MEX"
+  },
+  {
+    "region": "Guanajuato",
+    "country_code": "MEX"
+  },
+  {
+    "region": "Hidalgo",
+    "country_code": "MEX"
+  },
+  {
+    "region": "Nuevo León",
+    "country_code": "MEX"
+  },
+  {
+    "region": "Querétaro",
+    "country_code": "MEX"
+  },
+  {
+    "region": "Sonora",
+    "country_code": "MEX"
+  },
+  {
+    "region": "Zacatecas",
+    "country_code": "MEX"
+  },
+  {
+    "region": "Arequipa",
+    "country_code": "PER"
+  },
+  {
+    "region": "Lima",
+    "country_code": "PER"
+  },
+  {
+    "region": "Ica",
+    "country_code": "PER"
+  },
+  {
+    "region": "Pica",
+    "country_code": "PER"
+  },
+  {
+    "region": "Arizona",
+    "country_code": "USA"
+  },
+  {
+    "region": "Arkansas",
+    "country_code": "USA"
+  },
+  {
+    "region": "California",
+    "country_code": "USA"
+  },
+  {
+    "region": "Colorado",
+    "country_code": "USA"
+  },
+  {
+    "region": "Florida",
+    "country_code": "USA"
+  },
+  {
+    "region": "Georgia plateau/Piedmont",
+    "country_code": "USA"
+  },
+  {
+    "region": "Illinois",
+    "country_code": "USA"
+  },
+  {
+    "region": "Maine",
+    "country_code": "USA"
+  },
+  {
+    "region": "Michigan",
+    "country_code": "USA"
+  },
+  {
+    "region": "Minnesota",
+    "country_code": "USA"
+  },
+  {
+    "region": "Missouri",
+    "country_code": "USA"
+  },
+  {
+    "region": "New Jeresey",
+    "country_code": "USA"
+  },
+  {
+    "region": "New Mexico",
+    "country_code": "USA"
+  },
+  {
+    "region": "New York",
+    "country_code": "USA"
+  },
+  {
+    "region": "North Carolina",
+    "country_code": "USA"
+  },
+  {
+    "region": "Ohio",
+    "country_code": "USA"
+  },
+  {
+    "region": "Oklahoma",
+    "country_code": "USA"
+  },
+  {
+    "region": "Oregon",
+    "country_code": "USA"
+  },
+  {
+    "region": "Pennsylvannia",
+    "country_code": "USA"
+  },
+  {
+    "region": "Texas",
+    "country_code": "USA"
+  },
+  {
+    "region": "Virginia",
+    "country_code": "USA"
+  },
+  {
+    "region": "Washington",
+    "country_code": "USA"
+  },
+  {
+    "region": "Wisconsin",
+    "country_code": "USA"
+  },
+  {
+    "region": "Berat",
+    "country_code": "ALB"
+  },
+  {
+    "region": "Korça",
+    "country_code": "ALB"
+  },
+  {
+    "region": "Leskovik",
+    "country_code": "ALB"
+  },
+  {
+    "region": "Lezhë",
+    "country_code": "ALB"
+  },
+  {
+    "region": "Përmet",
+    "country_code": "ALB"
+  },
+  {
+    "region": "Shkoder",
+    "country_code": "ALB"
+  },
+  {
+    "region": "Tirana County",
+    "country_code": "ALB"
+  },
+  {
+    "region": "Ararat Valley",
+    "country_code": "ARM"
+  },
+  {
+    "region": "Areni, in the Vayots Dzor Province",
+    "country_code": "ARM"
+  },
+  {
+    "region": "Ijevan, in the Tavush Province",
+    "country_code": "ARM"
+  },
+  {
+    "region": "Burgenland",
+    "country_code": "AUT"
+  },
+  {
+    "region": "Northeastern and eastern Lower Austria",
+    "country_code": "AUT"
+  },
+  {
+    "region": "Southern Styria",
+    "country_code": "AUT"
+  },
+  {
+    "region": "Vienna",
+    "country_code": "AUT"
+  },
+  {
+    "region": "Baku",
+    "country_code": "AZE"
+  },
+  {
+    "region": "Ganja",
+    "country_code": "AZE"
+  },
+  {
+    "region": "Madrasa",
+    "country_code": "AZE"
+  },
+  {
+    "region": "Tovuz and Shamkir",
+    "country_code": "AZE"
+  },
+  {
+    "region": "Côtes de Sambre et Meuse",
+    "country_code": "BEL"
+  },
+  {
+    "region": "Hagelandse wijn",
+    "country_code": "BEL"
+  },
+  {
+    "region": "Haspengouw",
+    "country_code": "BEL"
+  },
+  {
+    "region": "Heuvelland",
+    "country_code": "BEL"
+  },
+  {
+    "region": "Čapljina",
+    "country_code": "BIH"
+  },
+  {
+    "region": "Čitluk",
+    "country_code": "BIH"
+  },
+  {
+    "region": "Ljubuški",
+    "country_code": "BIH"
+  },
+  {
+    "region": "Međugorje",
+    "country_code": "BIH"
+  },
+  {
+    "region": "Mostar",
+    "country_code": "BIH"
+  },
+  {
+    "region": "Stolac",
+    "country_code": "BIH"
+  },
+  {
+    "region": "Trebinje",
+    "country_code": "BIH"
+  },
+  {
+    "region": "Black Sea region",
+    "country_code": "BGR"
+  },
+  {
+    "region": "Danubian Plain",
+    "country_code": "BGR"
+  },
+  {
+    "region": "Rose Valley",
+    "country_code": "BGR"
+  },
+  {
+    "region": "Thrace",
+    "country_code": "BGR"
+  },
+  {
+    "region": "Valley of the Struma River",
+    "country_code": "BGR"
+  },
+  {
+    "region": "Central Croatia and Slavonia",
+    "country_code": "HRV"
+  },
+  {
+    "region": "Northern Croatian Littoral and Dalmatia",
+    "country_code": "HRV"
+  },
+  {
+    "region": "Commandaria",
+    "country_code": "CYP"
+  },
+  {
+    "region": "Laona - Akamas",
+    "country_code": "CYP"
+  },
+  {
+    "region": "Vouni Panagias – Ambelitis",
+    "country_code": "CYP"
+  },
+  {
+    "region": "Krasochoria Lemesou",
+    "country_code": "CYP"
+  },
+  {
+    "region": "Pitsilia",
+    "country_code": "CYP"
+  },
+  {
+    "region": "Diarizos Valley",
+    "country_code": "CYP"
+  },
+  {
+    "region": "Moravia",
+    "country_code": "CZE"
+  },
+  {
+    "region": "Bohemia",
+    "country_code": "CZE"
+  },
+  {
+    "region": "Praha",
+    "country_code": "CZE"
+  },
+  {
+    "region": "Alsace",
+    "country_code": "FRA"
+  },
+  {
+    "region": "Bordeaux",
+    "country_code": "FRA"
+  },
+  {
+    "region": "Burgundy",
+    "country_code": "FRA"
+  },
+  {
+    "region": "Champagne",
+    "country_code": "FRA"
+  },
+  {
+    "region": "Jura",
+    "country_code": "FRA"
+  },
+  {
+    "region": "Languedoc-Roussillon",
+    "country_code": "FRA"
+  },
+  {
+    "region": "Loire Valley",
+    "country_code": "FRA"
+  },
+  {
+    "region": "Lorraine",
+    "country_code": "FRA"
+  },
+  {
+    "region": "Madiran",
+    "country_code": "FRA"
+  },
+  {
+    "region": "Provence",
+    "country_code": "FRA"
+  },
+  {
+    "region": "Rhône",
+    "country_code": "FRA"
+  },
+  {
+    "region": "Savoie",
+    "country_code": "FRA"
+  },
+  {
+    "region": "Abkhazia",
+    "country_code": "GEO"
+  },
+  {
+    "region": "Kakheti",
+    "country_code": "GEO"
+  },
+  {
+    "region": "Kartli",
+    "country_code": "GEO"
+  },
+  {
+    "region": "Imereti",
+    "country_code": "GEO"
+  },
+  {
+    "region": "Racha-Lechkhumi and Kvemo Svaneti",
+    "country_code": "GEO"
+  },
+  {
+    "region": "Ahr",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Baden",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Franconia (Franken)",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Hessische Bergstraße",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Mittelrhein",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Mosel",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Nahe",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Palatinate (Pfalz)",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Rheingau",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Rheinhessen",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Saale-Unstrut",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Saxony (Sachsen)",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Württemberg",
+    "country_code": "DEU"
+  },
+  {
+    "region": "Aegean Islands",
+    "country_code": "GRC"
+  },
+  {
+    "region": "Central Greece",
+    "country_code": "GRC"
+  },
+  {
+    "region": "Ionian Islands",
+    "country_code": "GRC"
+  },
+  {
+    "region": "Macedonia",
+    "country_code": "GRC"
+  },
+  {
+    "region": "Peloponnesus",
+    "country_code": "GRC"
+  },
+  {
+    "region": "Balaton",
+    "country_code": "HUN"
+  },
+  {
+    "region": "Duna",
+    "country_code": "HUN"
+  },
+  {
+    "region": "Eger",
+    "country_code": "HUN"
+  },
+  {
+    "region": "Pannon",
+    "country_code": "HUN"
+  },
+  {
+    "region": "Sopron",
+    "country_code": "HUN"
+  },
+  {
+    "region": "Tokaj",
+    "country_code": "HUN"
+  },
+  {
+    "region": "Cork",
+    "country_code": "IRL"
+  },
+  {
+    "region": "Apulia",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Calabria",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Emilia-Romagna",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Liguria",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Lombardy",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Marche",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Piedmont",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Sardinia",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Sicily",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Trentino-Alto Adige",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Tuscany",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Umbria",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Veneto",
+    "country_code": "ITA"
+  },
+  {
+    "region": "Sabile",
+    "country_code": "LVA"
+  },
+  {
+    "region": "Moselle Valley",
+    "country_code": "LUX"
+  },
+  {
+    "region": "Povardarie",
+    "country_code": "MKD"
+  },
+  {
+    "region": "Skopsko vinogorje",
+    "country_code": "MKD"
+  },
+  {
+    "region": "Tikveš",
+    "country_code": "MKD"
+  },
+  {
+    "region": "Bardar",
+    "country_code": "MDA"
+  },
+  {
+    "region": "Codri",
+    "country_code": "MDA"
+  },
+  {
+    "region": "Cricova",
+    "country_code": "MDA"
+  },
+  {
+    "region": "Hînceşti",
+    "country_code": "MDA"
+  },
+  {
+    "region": "Purcari",
+    "country_code": "MDA"
+  },
+  {
+    "region": "Crmnica",
+    "country_code": "MNE"
+  },
+  {
+    "region": "Plantaže, near Podgorica",
+    "country_code": "MNE"
+  },
+  {
+    "region": "Groesbeek",
+    "country_code": "NLD"
+  },
+  {
+    "region": "Dolny Śląsk",
+    "country_code": "POL"
+  },
+  {
+    "region": "Kazimierz Dolny",
+    "country_code": "POL"
+  },
+  {
+    "region": "Małopolska",
+    "country_code": "POL"
+  },
+  {
+    "region": "Podkarpacie",
+    "country_code": "POL"
+  },
+  {
+    "region": "Warka, near Warsaw",
+    "country_code": "POL"
+  },
+  {
+    "region": "Zielona Góra",
+    "country_code": "POL"
+  },
+  {
+    "region": "Alentejo",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Bairrada",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Bucelas",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Carcavelos",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Colares",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Dão",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Lagoa",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Lagos",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Madeira",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Portimão",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Porto e Douro",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Setúbal",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Tavira",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Vinhos Verdes",
+    "country_code": "PRT"
+  },
+  {
+    "region": "Banat",
+    "country_code": "ROU"
+  },
+  {
+    "region": "Crişana",
+    "country_code": "ROU"
+  },
+  {
+    "region": "Dobrogea",
+    "country_code": "ROU"
+  },
+  {
+    "region": "Moldavia",
+    "country_code": "ROU"
+  },
+  {
+    "region": "Muntenia",
+    "country_code": "ROU"
+  },
+  {
+    "region": "Oltenia",
+    "country_code": "ROU"
+  },
+  {
+    "region": "Transylvania",
+    "country_code": "ROU"
+  },
+  {
+    "region": "Caucasus",
+    "country_code": "RUS"
+  },
+  {
+    "region": "Krasnodar",
+    "country_code": "RUS"
+  },
+  {
+    "region": "Stavropol",
+    "country_code": "RUS"
+  },
+  {
+    "region": "Banat region",
+    "country_code": "SRB"
+  },
+  {
+    "region": "Kosovo region",
+    "country_code": "SRB"
+  },
+  {
+    "region": "Nišava - South Morava region",
+    "country_code": "SRB"
+  },
+  {
+    "region": "Pocerina region",
+    "country_code": "SRB"
+  },
+  {
+    "region": "Srem region",
+    "country_code": "SRB"
+  },
+  {
+    "region": "Subotica - Horgoš region",
+    "country_code": "SRB"
+  },
+  {
+    "region": "Šumadija - Great Morava region",
+    "country_code": "SRB"
+  },
+  {
+    "region": "Timok region",
+    "country_code": "SRB"
+  },
+  {
+    "region": "West Morava region",
+    "country_code": "SRB"
+  },
+  {
+    "region": "Malokarpatská (Small Carpathians)",
+    "country_code": "SVK"
+  },
+  {
+    "region": "Južnoslovenská (Southern Slovakia)",
+    "country_code": "SVK"
+  },
+  {
+    "region": "Nitrianska (region of Nitra)",
+    "country_code": "SVK"
+  },
+  {
+    "region": "Stredoslovenská (Central Slovakia)",
+    "country_code": "SVK"
+  },
+  {
+    "region": "Tokaj (Tokaj region of Slovakia)",
+    "country_code": "SVK"
+  },
+  {
+    "region": "Východoslovenská (Eastern Slovakia)",
+    "country_code": "SVK"
+  },
+  {
+    "region": "Southern Slovakia",
+    "country_code": "SVK"
+  },
+  {
+    "region": "Podravje",
+    "country_code": "SVN"
+  },
+  {
+    "region": "Posavje",
+    "country_code": "SVN"
+  },
+  {
+    "region": "Primorska",
+    "country_code": "SVN"
+  },
+  {
+    "region": "Andalusia",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Aragon",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Balearic Islands",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Basque Country",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Canary Islands",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Castile and León",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Castile–La Mancha",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Catalonia",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Extremadura",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Galicia",
+    "country_code": "ESP"
+  },
+  {
+    "region": "La Rioja",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Community of Madrid",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Región de Murcia",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Navarre",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Valencian Community",
+    "country_code": "ESP"
+  },
+  {
+    "region": "Gutevin",
+    "country_code": "SWE"
+  },
+  {
+    "region": "Aargau",
+    "country_code": "CHE"
+  },
+  {
+    "region": "Bern",
+    "country_code": "CHE"
+  },
+  {
+    "region": "Freiburg",
+    "country_code": "CHE"
+  },
+  {
+    "region": "Geneva",
+    "country_code": "CHE"
+  },
+  {
+    "region": "Grisons",
+    "country_code": "CHE"
+  },
+  {
+    "region": "Neuchâtel",
+    "country_code": "CHE"
+  },
+  {
+    "region": "St. Gallen",
+    "country_code": "CHE"
+  },
+  {
+    "region": "Schaffhausen",
+    "country_code": "CHE"
+  },
+  {
+    "region": "Thurgau",
+    "country_code": "CHE"
+  },
+  {
+    "region": "Ticino",
+    "country_code": "CHE"
+  },
+  {
+    "region": "Valais",
+    "country_code": "CHE"
+  },
+  {
+    "region": "Vaud",
+    "country_code": "CHE"
+  },
+  {
+    "region": "Zürich",
+    "country_code": "CHE"
+  },
+  {
+    "region": "Altıntaş – Marmara region and Bozcaada",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Beylerce – Bilecik area",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Bornova Misketi – İzmir area",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Emir – Nevşehir (Cappadocia) area",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Hasandede – Ankara and central Anatolia",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Narince – Tokat area",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Rumi, Kabarcık, Dökülgen – Southeastern Anatolia region",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Sultaniye – Aegean region",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Yapıncak – Thracian region",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Adakarası – Marmara region and Avşa Island",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Boğazkere – Elazığ and Diyarbakır areas",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Çalkarası – Çal, Denizli area",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Dimrit – central Anatolia and eastern Aegean region",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Horozkarası, Sergikarası – southeastern Anatolia region",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Kalecik Karası – Ankara area",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Karalahna – Tekirdağ region",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Karasakız – Çanakkale region",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Öküzgözü – Elazığ area",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Papazkarası – Kırklareli area",
+    "country_code": "TUR"
+  },
+  {
+    "region": "Autonomous Republic of Crimea and Sevastopol",
+    "country_code": "UKR"
+  },
+  {
+    "region": "Kherson Oblast",
+    "country_code": "UKR"
+  },
+  {
+    "region": "Mykolaiv Oblast",
+    "country_code": "UKR"
+  },
+  {
+    "region": "Odessa Oblast",
+    "country_code": "UKR"
+  },
+  {
+    "region": "Zakarpattia Oblast",
+    "country_code": "UKR"
+  },
+  {
+    "region": "Zaporizhia Oblast",
+    "country_code": "UKR"
+  },
+  {
+    "region": "Hampshire",
+    "country_code": "GBR"
+  },
+  {
+    "region": "Kent",
+    "country_code": "GBR"
+  },
+  {
+    "region": "Surrey",
+    "country_code": "GBR"
+  },
+  {
+    "region": "Sussex",
+    "country_code": "GBR"
+  },
+  {
+    "region": "Shan state",
+    "country_code": "BRM"
+  },
+  {
+    "region": "Chang'an",
+    "country_code": "CHN"
+  },
+  {
+    "region": "Dalian, Liaoning",
+    "country_code": "CHN"
+  },
+  {
+    "region": "Gaochang",
+    "country_code": "CHN"
+  },
+  {
+    "region": "Luoyang",
+    "country_code": "CHN"
+  },
+  {
+    "region": "Qiuci",
+    "country_code": "CHN"
+  },
+  {
+    "region": "Tonghua, Jilin",
+    "country_code": "CHN"
+  },
+  {
+    "region": "Yantai, Shandong",
+    "country_code": "CHN"
+  },
+  {
+    "region": "Yibin, Sichuan",
+    "country_code": "CHN"
+  },
+  {
+    "region": "Zhangjiakou, Hebei",
+    "country_code": "CHN"
+  },
+  {
+    "region": "Bangalore, Karnataka",
+    "country_code": "IND"
+  },
+  {
+    "region": "Bijapur, Karnataka",
+    "country_code": "IND"
+  },
+  {
+    "region": "Narayangaon",
+    "country_code": "IND"
+  },
+  {
+    "region": "Nashik, Maharashtra",
+    "country_code": "IND"
+  },
+  {
+    "region": "Pune, Maharashtra",
+    "country_code": "IND"
+  },
+  {
+    "region": "Sangli, Maharashtra",
+    "country_code": "IND"
+  },
+  {
+    "region": "Bali",
+    "country_code": "IDN"
+  },
+  {
+    "region": "Malayer",
+    "country_code": "IRN"
+  },
+  {
+    "region": "Shiraz",
+    "country_code": "IRN"
+  },
+  {
+    "region": "Takestan",
+    "country_code": "IRN"
+  },
+  {
+    "region": "Urmia",
+    "country_code": "IRN"
+  },
+  {
+    "region": "Qazvin",
+    "country_code": "IRN"
+  },
+  {
+    "region": "Quchan",
+    "country_code": "IRN"
+  },
+  {
+    "region": "Bet Shemesh",
+    "country_code": "ISR"
+  },
+  {
+    "region": "Galilee",
+    "country_code": "ISR"
+  },
+  {
+    "region": "Golan Heights",
+    "country_code": "ISR"
+  },
+  {
+    "region": "Jerusalem",
+    "country_code": "ISR"
+  },
+  {
+    "region": "Judean Hills",
+    "country_code": "ISR"
+  },
+  {
+    "region": "Latrun",
+    "country_code": "ISR"
+  },
+  {
+    "region": "Mount Carmel",
+    "country_code": "ISR"
+  },
+  {
+    "region": "Rishon LeZion",
+    "country_code": "ISR"
+  },
+  {
+    "region": "Nagano",
+    "country_code": "JPN"
+  },
+  {
+    "region": "Yamanashi",
+    "country_code": "JPN"
+  },
+  {
+    "region": "Anseong, Gyeonggi-do",
+    "country_code": "PRK"
+  },
+  {
+    "region": "Gimcheon, Gyeongsangbuk-do",
+    "country_code": "PRK"
+  },
+  {
+    "region": "Gyeongsan, Gyeongsangbuk-do",
+    "country_code": "PRK"
+  },
+  {
+    "region": "Yeongcheon, Gyeongsangbuk-do",
+    "country_code": "PRK"
+  },
+  {
+    "region": "Yeongdong, Chungcheongbuk-do",
+    "country_code": "PRK"
+  },
+  {
+    "region": "Bekaa Valley",
+    "country_code": "LBN"
+  },
+  {
+    "region": "Mount Lebanon",
+    "country_code": "LBN"
+  },
+  {
+    "region": "North Governorate",
+    "country_code": "LBN"
+  },
+  {
+    "region": "South Governorate",
+    "country_code": "LBN"
+  },
+  {
+    "region": "Beit Jala",
+    "country_code": "PSE"
+  },
+  {
+    "region": "Hebron",
+    "country_code": "PSE"
+  },
+  {
+    "region": "Homs District",
+    "country_code": "SYR"
+  },
+  {
+    "region": "Jabal el Druze",
+    "country_code": "SYR"
+  },
+  {
+    "region": "Da Lat",
+    "country_code": "VNM"
+  },
+  {
+    "region": "New South Wales",
+    "country_code": "AUS"
+  },
+  {
+    "region": "Queensland",
+    "country_code": "AUS"
+  },
+  {
+    "region": "South Australia",
+    "country_code": "AUS"
+  },
+  {
+    "region": "Tasmania",
+    "country_code": "AUS"
+  },
+  {
+    "region": "Victoria",
+    "country_code": "AUS"
+  },
+  {
+    "region": "Western Australia",
+    "country_code": "AUS"
+  },
+  {
+    "region": "Auckland Region",
+    "country_code": "NZL"
+  },
+  {
+    "region": "Bay of Plenty",
+    "country_code": "NZL"
+  },
+  {
+    "region": "Canterbury",
+    "country_code": "NZL"
+  },
+  {
+    "region": "Central Otago",
+    "country_code": "NZL"
+  },
+  {
+    "region": "Hawke's Bay region",
+    "country_code": "NZL"
+  },
+  {
+    "region": "Gisborne",
+    "country_code": "NZL"
+  },
+  {
+    "region": "Marlborough",
+    "country_code": "NZL"
+  },
+  {
+    "region": "Nelson",
+    "country_code": "NZL"
+  },
+  {
+    "region": "Northland Region",
+    "country_code": "NZL"
+  },
+  {
+    "region": "Waikato",
+    "country_code": "NZL"
+  },
+  {
+    "region": "Wairarapa",
+    "country_code": "NZL"
+  }
+]

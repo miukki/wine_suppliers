@@ -60,6 +60,10 @@
   "user": {
     "dataSource": "mongo",
     "public": true,
+    "emailVerificationRequired": true,
     "options": {}
+  },
+  "Email": {
+    "dataSource": "emailDataSource"
   }
 }

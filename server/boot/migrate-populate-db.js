@@ -6,45 +6,55 @@ var chance = require('chance').Chance();
 
 // turn callbacks into promises
 function create(model, objects) {
-  return new Promise(function(resolve, reject) {
-    //http://apidocs.strongloop.com/loopback/#persistedmodel-create
+  //http://apidocs.strongloop.com/loopback/#persistedmodel-create
+  return new Promise(function (resolve, reject) {
     model.create(objects, function (err, results) {
       if (err) {
         //add console.log Error, if Error validation is happened we will see it on details
-        console.log('Error!', err);
+        console.error(model.modelName, 'Error!\n', err, '\n\n\n');
         return reject(err);
-      };
+      }
+      console.log(model.modelName, 'created\n', results, '\n\n\n');
       resolve(results);
     });
   });
-};
+}
 
-function parallel() {
-  return new Promise(function(resolve, reject){
 
-  })
+function createRoles(roles, Role) {
+    var promises = roles.map(function(role) {
+      return Role.create({name: role});
+    });
+    return Promise.all(promises).then(
+      function (data) {
+        console.log('create roles', roles.join(','), data);
+      }
+    );
 }
 
 module.exports = function(app) {
   var mongoDs = app.dataSources.mongo;
-  var memoryDs = app.dataSources.db;
+  //var memoryDs = app.dataSources.db;
   //add postgresql connector
   async.parallel([
       //for mongo connector, lists of functions:  function(callback) works in parallels
-      function(callback){
+      function(callback) {
         mongoDs.automigrate()
-        .then(function(){
+          .then(function() {
+            return createRoles(['root', 'supplier'], app.models.Role)
+          })
+          .then(function(){
           //create countries
-          return create(app.models.Country, [
-              {name: 'France'},
-              {name: 'Spain'},
-              {name: 'New Zealand'},
-              {name: 'Canada'},
-              {name: 'Chile'},
-              {name: 'Mexico'},
-              {name: 'Peru'}
+            return create(app.models.Country, [
+                {name: 'France'},
+                {name: 'Spain'},
+                {name: 'New Zealand'},
+                {name: 'Canada'},
+                {name: 'Chile'},
+                {name: 'Mexico'},
+                {name: 'Peru'}
             ]);
-        })
+          })
 
         .then(function(res){
        // regions belongs to country
@@ -79,8 +89,6 @@ module.exports = function(app) {
               {name: 'Fewo Weingut Clauer', regionId: res[4].id },
               {name: 'Weingut Villa Wolf', regionId: res[5].id },
               {name: 'Gunderloch', regionId: res[6].id }
-              
-              
             ]),
 
             // create grapes

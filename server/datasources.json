@@ -22,5 +22,12 @@
     "name": "mysql",
     "user": "admin",
     "connector": "mysql"
+  },
+  "emailDataSource": {
+    "name": "emailDataSource",
+    "connector": "mail",
+    "transport": {
+      "jsonTransport": true
+    }
   }
 }

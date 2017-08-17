@@ -25,7 +25,7 @@ module.exports = function (User) {
           var role = roles[0];
 
           RoleMapping.create({
-            principalType: "USER",
+            principalType: RoleMapping.USER,
             principalId: ctx.instance.id,
             roleId: role.id
           }, function (err, roleMapping) {
@@ -56,7 +56,7 @@ module.exports = function (User) {
       from: 'noreply@loopback.com',
       subject: 'Thanks for registering.',
       template: path.resolve(__dirname, '../../server/views/verify.ejs'),
-      redirect: '/verified',
+      redirect: '/',
       user: user
     };
 
@@ -66,7 +66,11 @@ module.exports = function (User) {
         return next(err);
       }
 
-      console.log('> verification email sent:', response);
+      console.log('> verification email sent:', response, JSON.stringify(response.email.response.toString()));
+
+      var replacementText = "check email";
+
+      context.result.verificationToken = replacementText;
 
       next();
     });

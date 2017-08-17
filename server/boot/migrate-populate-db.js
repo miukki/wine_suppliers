@@ -103,10 +103,7 @@ module.exports = function(app) {
               {name: 'Syrah'},
               {name: 'Malbec'},
               {name: 'Barbera'}
-            ]),
-
-
-
+            ])
           ]);
         })
         .then(function(res){
@@ -122,27 +119,21 @@ module.exports = function(app) {
               callback(null, res.concat(wines));
             }).catch(function(err){
               callback(err);
-            })
-
+            });
         }).catch(function(err){
           callback(err);
-        })
+        });
 
       },
          //for new (perhpas other) connector, if in future we want to use new  DBs
       function(callback){
-        mongoDs.automigrate().then(function(){
-          return Promise.all([
-          //  example how to use other connector
-
-
-          ]);
-        }).then(function(res){
-          callback(null, res);
-        }).catch(function(err){
-          callback(err);
-        })
-
+        // mongoDs.automigrate().then(function(){
+        //   return Promise.all([/* example how to use other connector*/]);
+        // }).then(function(res){
+        //   callback(null, res);
+        // }).catch(function(err){
+        //   callback(err);
+        // });
       }
 
 
@@ -150,7 +141,9 @@ module.exports = function(app) {
   ],
   // optional callback
   function(err, results){
-      if (err) throw err;
+    if (err) {
+      throw err;
+    }
       console.log('data created successfully!', results);
       // the results array will equal ['one','two'] even though
       // the second function had a shorter timeout.

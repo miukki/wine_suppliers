@@ -6,6 +6,7 @@
   "options": {
     "validateUpsert": true
   },
+  "replaceOnPUT": true,
   "properties": {
     "name": {
       "type": "string",
@@ -21,13 +22,5 @@
     }
   },
   "acls": [],
-  "methods": {
-    "staticMethod": {
-      "http": { "path": "/static" }
-    },
-    "prototype.instanceMethod": {
-     "http": { "path": "/instance" }
-    } 
-  },
-  "replaceOnPUT": true
+  "methods": {}
 }

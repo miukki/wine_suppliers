@@ -3,10 +3,11 @@
   "plural": "Grapes",
   "base": "PersistedModel",
   "idInjection": true,
-  "forceId": true,
   "options": {
     "validateUpsert": true
   },
+  "forceId": true,
+  "replaceOnPUT": true,
   "properties": {
     "name": {
       "type": "string",
@@ -23,14 +24,5 @@
     }
   },
   "acls": [],
-  "methods": {
-    "staticMethod": {
-      "http": { "path": "/static" }
-    },
-    "prototype.instanceMethod": {
-     "http": { "path": "/instance" }
-    } 
-  },
-  
-  "replaceOnPUT": true
+  "methods": {}
 }

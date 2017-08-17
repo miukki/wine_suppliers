@@ -41,7 +41,7 @@
     },
     "prototype.instanceMethod": {
      "http": { "path": "/instance" }
-    } 
+    }
   },
   "replaceOnPUT": true
 }

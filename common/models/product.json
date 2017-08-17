@@ -81,7 +81,7 @@
         {"arg": "req", "type": "object", "http": {"source": "req"}},
         {"arg": "res", "type": "object", "http": {"source": "res"}}
       ],
-      "returns": [{"arg": "items", "type": "object"}],
+      "returns": [{"arg":"result", "type": "object"}],
       "description": "Upload csv file",
       "http": [
         {

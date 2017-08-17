@@ -43,14 +43,7 @@ module.exports = function(Product) {
             }
           });
 
-
-          cb(null, parsedData.map(function (item) {
-            if (item.errors) {
-              return {created: false,  errors: item.errors};
-            } else {
-              return {created: 'ok'};
-            }
-          }));
+          cb(null, result);
         },
         function (err) {
           cb(err);

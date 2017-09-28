@@ -3,6 +3,9 @@
 //async migration to DBs: mySQL, mongoDs
 var async = require('async');
 var chance = require('chance').Chance();
+var countries = require('./data/countries.json');
+var regions = require('./data/regions.json');
+var _ = require('lodash');
 
 // turn callbacks into promises
 function create(model, objects) {
@@ -21,15 +24,18 @@ function create(model, objects) {
 }
 
 
-function createRoles(roles, Role) {
+function createRoles(roles) {
     var promises = roles.map(function(role) {
-      return Role.create({name: role});
+      return app.models.Role.create({name: role});
     });
-    return Promise.all(promises).then(
-      function (data) {
-        console.log('create roles', roles.join(','), data);
-      }
-    );
+    return Promise.all(promises);
+}
+
+function createRegions(countries) {
+    var promises = _.map(countries, function(country) {
+      return create(app.models.Region, _.filter(regions, {'country_code': country.code}));
+    });
+    return Promise.all(promises);
 }
 
 module.exports = function(app) {
@@ -45,31 +51,20 @@ module.exports = function(app) {
           })
           .then(function(){
           //create countries
-            return create(app.models.Country, [
-                {name: 'France'},
-                {name: 'Spain'},
-                {name: 'New Zealand'},
-                {name: 'Canada'},
-                {name: 'Chile'},
-                {name: 'Mexico'},
-                {name: 'Peru'}
-            ]);
+            return create(app.models.Country, countries);
           })
 
-        .then(function(res){
-       // regions belongs to country
-        return create(app.models.Region, [
-              {name: 'Pernambuco', countryId: res[0].id},
-              {name: 'Catalan', countryId: res[1].id},
-              {name: 'Santa Catarina', countryId: res[2].id},
-              {name: 'British Columbia', countryId: res[3].id},
-              {name: 'Aconcagua', countryId: res[4].id},
-              {name: 'Aguascalientes', countryId: res[5].id},
-              {name: 'Lima', countryId: res[6].id}
-            ]);
+        .then(function(resp){
+        // regions belongs to country
+        return createRegions(resp) 
+        // create(app.models.Region, [
+        //       {name: 'Pernambuco', countryId: res[0].id}
+        //     ]);
 
         })
         .then(function(res){
+
+          console.log('regions', res);
 
           return Promise.all([
           //  create type..

@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 RUN npm install -g bower
 
 COPY package.json /usr/src/app
-RUN npm install --production
+RUN npm install
 
 COPY bower.json /usr/src/app
 COPY .bowerrc /usr/src/app

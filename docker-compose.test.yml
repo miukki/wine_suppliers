@@ -1,0 +1,10 @@
+# docker-compose.test.yml
+services:
+  mongo:
+    image: mongo:3.4
+    volumes: ['./data:/data/db']
+  sut:
+    build: .
+    links: [mongo]
+    command: ['npm', 'run', 'pretest']
+version: '3'

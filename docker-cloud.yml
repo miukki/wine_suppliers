@@ -1,0 +1,13 @@
+# docker-cloud.yml
+
+mongo:
+  image: 'mongo:3.4'
+  volumes:
+    - '/var/data/winery:/data/db'
+web:
+  autoredeploy: true
+  image: 'emj365/winery:dockerlize'
+  links:
+    - mongo
+  ports:
+    - '80:3000'

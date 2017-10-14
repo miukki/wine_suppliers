@@ -14,15 +14,6 @@
     "user": "",
     "connector": "mongodb"
   },
-  "mysql": {
-    "host": "localhost",
-    "port": 1234,
-    "database": "winery",
-    "password": "admin",
-    "name": "mysql",
-    "user": "admin",
-    "connector": "mysql"
-  },
   "emailDataSource": {
     "name": "emailDataSource",
     "connector": "mail",

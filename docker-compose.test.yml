@@ -1,10 +1,12 @@
-# docker-compose.test.yml
 services:
   mongo:
+    healthcheck: {retries: 5, test: 'echo ''db.stats().ok'' | mongo localhost:27017/winery
+        --quiet', timeout: 1s}
     image: mongo:3.4
-    volumes: ['./data:/data/db']
   sut:
     build: .
+    command: [npm, test]
+    depends_on:
+      mongo: {condition: service_healthy}
     links: [mongo]
-    command: ['npm', 'run', 'pretest']
-version: '3'
+version: '2.1'

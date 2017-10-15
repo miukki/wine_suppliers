@@ -1,0 +1,10 @@
+.git/
+.gitignore
+data/
+node_modules/
+client/bower_components/
+docular_generated/
+npm-debug.log
+.dockerignore
+Dockerfile
+docker-*.yml

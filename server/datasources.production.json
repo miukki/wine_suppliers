@@ -1,0 +1,18 @@
+{
+  "mongo": {
+    "host": "mongo",
+    "port": 27017,
+    "database": "winery",
+    "password": "",
+    "name": "mongo",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "emailDataSource": {
+    "name": "emailDataSource",
+    "connector": "mail",
+    "transport": {
+      "jsonTransport": true
+    }
+  }
+}

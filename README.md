@@ -27,3 +27,11 @@ This is the place for your application front-end files.
 #### start local server with documentation with lb-ng doc
 `grunt angular-sdk`
 
+## Docker
+
+### Running in the Docker Compose
+
+```bash
+docker-comopse build
+docker-compose up -d #Detached mode: Run containers in the background
+```

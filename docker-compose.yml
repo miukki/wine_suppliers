@@ -1,0 +1,9 @@
+services:
+  mongo:
+    image: mongo:3.4
+    volumes: ['./data:/data/db']
+  web:
+    build: .
+    links: [mongo]
+    ports: ['3000:3000']
+version: '3'

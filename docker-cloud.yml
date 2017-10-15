@@ -1,0 +1,11 @@
+mongo:
+  image: mongo:3.4
+  volumes: ['/var/data/winery:/data/db']
+web:
+  autoredeploy: true
+  environment: [VIRTUAL_HOST=winery.emj365.com]
+  image: emj365/winery:dockerlize
+  links: [mongo]
+  ports: ['3000']
+  sequential_deployment: true
+  tags: [production, winery]
